@@ -9,7 +9,12 @@ test:
   url: <%= ENV['DATABASE_URL'] %>_test
 
 production:
-  encoding: utf8
   pool: 100
-  url: hanumi:password@hanumi.c7bwbo70whto.us-west-2.rds.amazonaws.com:3306/hanumi
+  encoding: utf8
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
+  #url: hanumi:password@hanumi.c7bwbo70whto.us-west-2.rds.amazonaws.com:3306/hanumi
   #url: <%= ENV['DATABASE_URL'] %>
